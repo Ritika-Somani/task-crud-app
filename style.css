@@ -1,0 +1,102 @@
+body {
+    background-color: #f8f9fa;
+    font-size: 14px;
+}
+
+.navbar {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.table-container {
+    background-color: #fff;
+    padding: 5px 5px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.table td,
+.table th {
+    vertical-align: middle;
+    padding: 10px;
+}
+
+.btn-icon {
+    padding: 4px 8px;
+}
+
+.status-select {
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-weight: 500;
+    width: 110px;
+    border: none;
+    outline: none;
+    text-align: center;
+}
+
+.status-pending {
+    background-color: transparent;
+    border: 1px solid #dc3545;
+    color: #dc3545;
+}
+
+.status-completed {
+    background-color: transparent;
+    border: 1px solid #198754;
+    color: #198754;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Login Page Styles */
+.login-card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+    margin-top: 40px;
+}
+
+.login-card h4 {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.login-card .form-control {
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.login-card .btn-login {
+    width: 100%;
+    border-radius: 6px;
+}
+
+.login-card .text-small {
+    font-size: 13px;
+}
+
+
+.form-card {
+    background-color: #fff;
+    max-width: 500px;
+    margin: 80px auto;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+
