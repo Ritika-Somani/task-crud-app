@@ -82,7 +82,11 @@ $result = $stmt->get_result();
                     <?php while ($row = $result->fetch_assoc()): ?>
                         <tr>
                             <td><?= htmlspecialchars($row['title']) ?></td>
-                            <td><?= htmlspecialchars($row['description']) ?></td>
+                            <!-- <td><?= htmlspecialchars($row['description']) ?></td> -->
+                            <td class="text-truncate" title="<?= htmlspecialchars($row['description']) ?>">
+                                <?= htmlspecialchars($row['description']) ?>
+                            </td>
+
                             <td><?= date('d-M-Y h:i A', strtotime($row['created_at'])) ?></td>
                             <td>
                                 <form method="POST" class="d-inline">
@@ -106,10 +110,10 @@ $result = $stmt->get_result();
                                 </form>
                             </td>
                             <td class="text-center">
-                                <a href="edit_task.php?task_id=<?= $row['task_id'] ?>" class="btn btn-outline-primary btn-icon btn-sm me-1" title="Edit">
+                                <a href="edit_task.php?task_id=<?= $row['task_id'] ?>" class="btn btn-outline-dark btn-icon btn-sm me-1" title="Edit">
                                     <i class="bi bi-pencil"></i>
                                 </a>
-                                <a href="delete_task.php?task_id=<?= $row['task_id'] ?>" class="btn btn-outline-danger btn-icon btn-sm me-1" title="Delete" onclick="return confirm('Are you sure you want to delete this task?');">
+                                <a href="delete_task.php?task_id=<?= $row['task_id'] ?>" class="btn btn-outline-dark btn-icon btn-sm me-1" title="Delete" onclick="return confirm('Are you sure you want to delete this task?');">
                                     <i class="bi bi-trash"></i>
                                 </a>
                             </td>

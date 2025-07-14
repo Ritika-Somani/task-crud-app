@@ -5,7 +5,7 @@ session_start();
 $errors = [];
 $success = '';
 
-// Autofill token from URL if present
+// Autofill token from URL or POST
 $token = $_GET['token'] ?? ($_POST['token'] ?? '');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -16,6 +16,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errors[] = "All fields are required.";
     } elseif ($newPassword !== $confirmPassword) {
         $errors[] = "Passwords do not match.";
+    } elseif (
+        strlen($newPassword) < 8 ||
+        !preg_match('/[A-Z]/', $newPassword) ||
+        !preg_match('/[a-z]/', $newPassword) ||
+        !preg_match('/[0-9]/', $newPassword) ||
+        !preg_match('/[\W_]/', $newPassword)
+    ) {
+        $errors[] = "Password must be at least 8 characters long and include uppercase, lowercase, number, and special character.";
+    } elseif (preg_match('/(0123|1234|2345|abcd|bcde|cdef|qwerty)/i', $newPassword)) {
+        $errors[] = "Password should not contain common sequences like '1234', 'abcd', or 'qwerty'.";
     } else {
         $stmt = $conn->prepare("SELECT user_id, token_expiry FROM tbl_user WHERE reset_token = ?");
         $stmt->bind_param("s", $token);
@@ -68,8 +78,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <?php if (!$success): ?>
     <form method="POST" class="mt-3">
-        <input type="hidden" name="token" value="<?= htmlspecialchars($token) ?>">
-
         <div class="mb-3">
             <label class="form-label">Reset Token</label>
             <input type="password" name="token" class="form-control" value="<?= htmlspecialchars($token) ?>">

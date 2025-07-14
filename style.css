@@ -1,3 +1,4 @@
+/* dashboard page style */
 body {
     background-color: #f8f9fa;
     font-size: 14px;
@@ -48,15 +49,6 @@ body {
 }
 
 
-
-
-
-
-
-
-
-
-
 /* Login Page Styles */
 .login-card {
     background-color: #fff;
@@ -89,7 +81,7 @@ body {
     font-size: 13px;
 }
 
-
+/* Add/Edit Task page style, Forgot-Reset Password page style */
 .form-card {
     background-color: #fff;
     max-width: 500px;
@@ -98,5 +90,39 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
+
+/* Table column widths and text handling */
+.table-container table {
+    table-layout: fixed;
+    width: 100%;
+}
+
+.table-container th:nth-child(1) {
+    width: 15%; /* Title */
+}
+
+.table-container th:nth-child(2) {
+    width: 35%; /* Description */
+}
+
+.table-container th:nth-child(3) {
+    width: 20%; /* Created At */
+}
+
+.table-container th:nth-child(4) {
+    width: 15%; /* Status */
+}
+
+.table-container th:nth-child(5) {
+    width: 15%; /* Action */
+}
+
+/* Prevent long description text from breaking layout */
+.table-container td:nth-child(2) {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 
 
