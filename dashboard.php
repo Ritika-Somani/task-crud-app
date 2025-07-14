@@ -53,15 +53,6 @@ $result = $stmt->get_result();
         <div class="d-flex justify-content-between align-items-center mb-3">
 
             <h4 class="fw-semibold">My Tasks</h4>
-
-
-            <!-- Trigger Drawer -->
-            <!-- <a href="#" class="btn btn-outline-dark btn-sm" data-bs-toggle="offcanvas" data-bs-target="#addTaskDrawer">
-                <i class="bi bi-plus-lg me-1"></i> Add Task
-            </a> -->
-
-
-
             <a href="add_task.php" class="btn btn-outline-dark btn-sm">
                 <i class="bi bi-plus-lg me-1"></i> Add Task
             </a>

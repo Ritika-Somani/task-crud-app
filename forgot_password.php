@@ -79,23 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <a href="index.php" class="btn btn-outline-secondary btn-sm">Cancel</a>
             </div>
         <?php endif; ?>
-
-
-
-
-
-        <!-- <form method="POST">
-            <div class="mb-3">
-                <label class="form-label">Registered Email</label>
-                <input type="email" name="email" class="form-control" required>
-            </div>
-            <div class="text-end">
-                <a href="index.php" class="btn btn-outline-secondary btn-sm">Cancel</a>
-                <button type="submit" class="btn btn-dark btn-sm">Send Link</button>
-            </div>
-        </form> -->
     </div>
-
 </body>
 
 </html>

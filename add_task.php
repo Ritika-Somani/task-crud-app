@@ -24,10 +24,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if ($check->num_rows > 0) {
             $errors[] = "You already have a task with this title.";
-
-            // $_SESSION['errors'][] = "You already have a task with this title.";
-            // header("Location: add_task.php");
-            // exit;
         }
     }
 

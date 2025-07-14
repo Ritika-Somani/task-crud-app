@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $domain = strtolower(explode('@', $email)[1] ?? '');
 
-    // Validation block
+    // Validation check on all respective fields
     if (empty($email) || empty($password) || empty($confirm)) {
         $errors[] = "All fields are required.";
     } elseif (
